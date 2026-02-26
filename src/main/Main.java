@@ -18,7 +18,6 @@ public class Main {
 		UserType userType = null;
 		
 		
-		
 		User user = RegisterUser.getUserData();
 		
 		System.out.println("Subscription type : "+user.getUsertype()+" | Name : "+user.getName()+" | Email : "+user.getEmail()+" | Password : "+user.getPassword());
