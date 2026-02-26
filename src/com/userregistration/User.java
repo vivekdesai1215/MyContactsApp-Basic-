@@ -1,7 +1,7 @@
 package com.userregistration;
 
 public class User {
-	private UserType usertype;
+	private UserType usertype = UserType.PREMIUM;
 	private String name;
 	private String email;
 	private String password;

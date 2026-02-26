@@ -7,12 +7,11 @@ import java.util.*;
 
 public class RegisterUser {
 	
-	public static User getUserData() {
+	public static User getUserData(Scanner sc) {
 		UserType userType=null;
 		String name=null;
 		String email=null;
 		
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Create your account : ");
 		
 		System.out.println("Type of Account : (Premium | Free)");
