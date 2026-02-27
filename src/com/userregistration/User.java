@@ -1,3 +1,8 @@
+
+// This is the main User class which is acts as a blueprint for the user objects
+// It has fields like - name, email, password, phoneNo
+
+
 package com.userregistration;
 
 public class User {
@@ -58,6 +63,17 @@ public class User {
 	}
 	
 	
+	@Override
+	public boolean equals(Object o) {
+		if(this==o) return true;
+		if(!(o instanceof User)) return false;
+		User user = (User) o;
+		return email.equals(user.email);
+	}
 	
+	@Override
+	public int hashCode() {
+		return email.hashCode();
+	}
 	
 }

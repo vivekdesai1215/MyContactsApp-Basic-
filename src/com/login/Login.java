@@ -1,3 +1,8 @@
+
+// This Login class is like a factory class, It takes user email and password and type of authentication they want
+// Then it calls the OAuth or BasicAuth based on the user demand
+
+
 package com.login;
 import java.util.*;
 

@@ -1,3 +1,9 @@
+
+// This class is responsible for Registering User
+// it Asks user about the subscription type and also user info like name, email, pass, phoneNo
+// It Validates all these fields and then creates a user object and returns the user object
+
+
 package com.userregistration;
 
 import main.Main;

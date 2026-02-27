@@ -1,22 +1,23 @@
 
-// It stores the users in a userList
-// IT has a static block that initializes 2 objects initially (just for testing purpose coz we don't have any database)
-
-//// Flow of Application : 
-//Asks User if he wants to Register or Login
-//If user chooses register it calls the Register method else it calls Login method
-//if User successfully logs in, then it gives user options to view his profile, edit his profile data, view contact list or edit contact list
+// Extending UC3 and implementing this
+// Implemented to give Multiple options to user like - View Profile data, Add Contacts etc
+// addContact method in AddContact class takes user name, email, phoneNo, and tag as input and create a new Contact Object
+// The Contact object is added to the HashMap userContacts - user Contacts stores a list of Contacts as value to the User as object
+// I have overridden equals method in User class so that I could use User object as key in HashMap.
 
 
 // @Author Vivek
-// @version 3
+// @version 4
 
 
 package main;
 
 import java.util.*;
 import com.login.Login;
+import com.mycontact.contacts.AddContact;
+import com.mycontact.contacts.Contacts;
 import com.mycontact.modify.ModifyUserProfile;
+import com.sessionmanager.SessionManager;
 import com.userregistration.HashPassword;
 import com.userregistration.RegisterUser;
 import com.userregistration.User;
@@ -25,10 +26,18 @@ import com.userregistration.UserType;
 
 public class Main {
 	public static List<User> userList = new ArrayList<>();
+	public static Map<User, List<Contacts>> userContacts = new HashMap<>();
+	
 	
 	static {
-		userList.add( new User(UserType.PREMIUM, "Vivek","vivekdesai1215@gmail.com",HashPassword.hashPassword("vivek1010"), "9190909090"));
-		userList.add(new User(UserType.FREE, "Vivek","vivekdesai1215@gmail.com",HashPassword.hashPassword("vivek1010"), "7204760809")) ;
+		User user01 = new User(UserType.PREMIUM, "Vivek","vivekdesai1215@gmail.com",HashPassword.hashPassword("vivek1010"), "9190909090");
+		User user02 = new User(UserType.FREE, "Vivek","vivekdesai1215@gmail.com",HashPassword.hashPassword("vivek1010"), "7204760809");
+		userList.add(user01);
+		userList.add(user02);
+		Contacts contacts01 = new Contacts( "tempo", "9191919191","shreyas@gmail.com","Company");
+		Contacts contacts02 = new Contacts("tempooooo","7204760809","hey@gmail.com","Bank");
+		userContacts.put(user01, new ArrayList<>(Arrays.asList(contacts01,contacts02)));
+		
 	}
 	
 	
@@ -36,7 +45,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to My Application");	
 		
-		User user=null;
+		User user = null;
 		
 		System.out.print("Login || SignUp ? : ");
 		String choice = sc.nextLine();
@@ -59,19 +68,47 @@ public class Main {
 
 		}
 		if(user !=null) {
-		System.out.println("");
-		System.out.println("Please select the Opration you wanna perform : ");
-		System.out.println("1. Edit Your Profile Info \n 2. Edit Contacts ");
-		int op = sc.nextInt();
+			do {
+			System.out.println("");
+			System.out.println("Please select the Opration you wanna perform : ");
+			System.out.println("1. View your Profile Info \n 2. Edit Your Profile Info \n 3. View your Contacts \n 4. Add Contacts \n 5. Edit your Contacts \n 6. Delete Contacts \n 7. End Session(Log Out)");
+			System.out.println("");
+			int op = sc.nextInt();
+			sc.nextLine();
 		
-		switch(op) {
-		case 1 : {
-			ModifyUserProfile.modifyUserData(user, sc);
-			break;
+			switch(op) {
+			case 1:{
+				System.out.println("Name : "+user.getName());
+				System.out.println("Email : "+user.getEmail());
+				System.out.println("PhoneNo : "+user.getPhoneNo());
+				System.out.println("");
+				break;
+			}
+			case 2 : {
+				ModifyUserProfile.modifyUserData(user, sc);
+				break;
+			}
+			case 3:{
+				break;
+			}
+			case 4:{
+				AddContact.addContact(user, sc);
+				break;
+			}
+			case 5:{
+				
+				break;
+			}
+			case 6:{
+				
+				break;
+			}
+			case 7:{
+				
+				break;
+			}
 		}
-		
-		
-		}
+		}while(true);
 		}
 	}
 

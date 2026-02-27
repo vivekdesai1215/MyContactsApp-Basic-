@@ -1,3 +1,9 @@
+
+// this is a singleton pattern, It is responsible for creating sessions
+// when user logs in using OAuth then this class creates a session and stores that session token and user object in a hashmap
+// The application can use this to validate the session by using sessions HashMap
+// When user logs out then his session will be deleted.
+
 package com.sessionmanager;
 import java.util.*;
 import com.userregistration.User;
@@ -39,5 +45,10 @@ public class SessionManager {
 	
 	public boolean isValidSession(String token) {
 		return sessions.containsKey(token);
+	}
+	
+	public static boolean isSessionActive() {
+		if(instance ==null)return false;
+		else return true;
 	}
 }

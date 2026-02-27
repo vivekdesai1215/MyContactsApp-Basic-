@@ -1,3 +1,8 @@
+
+
+// This class is responsible for User Profile Modifications
+// It asks the fields the user wants to edit and then validates them and edits the user profile data.
+
 package com.mycontact.modify;
 import java.util.Scanner;
 

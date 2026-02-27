@@ -1,3 +1,6 @@
+//This is Basic Auth , it just takes user email and password and password and compares with the existing users in userList and
+//if they both match then it returns user Object
+
 package com.authentication;
 
 import main.Main;

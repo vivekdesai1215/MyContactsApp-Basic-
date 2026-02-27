@@ -1,3 +1,6 @@
+
+// This class is responsible for Password Hashing, it uses the MessageDigest Interface to access "SHA-256" object.
+
 package com.userregistration;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

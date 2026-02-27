@@ -1,3 +1,9 @@
+//This is OAuth, it works a bit complex
+// It first verifies the user email id and password
+// It then generates a random token using UUID.randomUUID()
+// It then calls the SessionManager to start a session, which creates a session and stores the session in HashMap along with the token
+// Then it returns the user object
+
 package com.authentication;
 
 import java.util.UUID;
