@@ -5,17 +5,26 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	private String phoneNo;
 	
 	
-	public User(UserType usertype, String name, String email, String password) {
+	public User(UserType usertype, String name, String email, String password,String phoneNo) {
 		this.usertype = usertype;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		
+		this.phoneNo = phoneNo;
 		System.out.println("User object successfully created !!");
 	}
 	
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
 	public UserType getUsertype() {
 		return usertype;
 	}
