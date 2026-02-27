@@ -1,13 +1,12 @@
 
-// Extending UC3 and implementing this
-// Implemented to give Multiple options to user like - View Profile data, Add Contacts etc
-// addContact method in AddContact class takes user name, email, phoneNo, and tag as input and create a new Contact Object
-// The Contact object is added to the HashMap userContacts - user Contacts stores a list of Contacts as value to the User as object
-// I have overridden equals method in User class so that I could use User object as key in HashMap.
+// Extending UC4 and implementing this
+// Added a View Contact Feature
+// ViewContact class has a viewContacts method that takes ArrayList as input and extracts the contact infos and prints them
+
 
 
 // @Author Vivek
-// @version 4
+// @version 5
 
 
 package main;
@@ -16,6 +15,7 @@ import java.util.*;
 import com.login.Login;
 import com.mycontact.contacts.AddContact;
 import com.mycontact.contacts.Contacts;
+import com.mycontact.contacts.ViewContacts;
 import com.mycontact.modify.ModifyUserProfile;
 import com.sessionmanager.SessionManager;
 import com.userregistration.HashPassword;
@@ -24,6 +24,7 @@ import com.userregistration.User;
 import com.userregistration.UserType;
 
 
+@SuppressWarnings("unused")
 public class Main {
 	public static List<User> userList = new ArrayList<>();
 	public static Map<User, List<Contacts>> userContacts = new HashMap<>();
@@ -89,6 +90,7 @@ public class Main {
 				break;
 			}
 			case 3:{
+				ViewContacts.viewContacts(userContacts.get(user));
 				break;
 			}
 			case 4:{
