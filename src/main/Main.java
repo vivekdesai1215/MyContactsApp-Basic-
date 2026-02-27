@@ -1,12 +1,11 @@
 
-// Extending UC4 and implementing this
-// Added a View Contact Feature
-// ViewContact class has a viewContacts method that takes ArrayList as input and extracts the contact infos and prints them
-
+// Extending UC5 and implementing this
+// Added EditContacts Feature 
+// EditContacts will edit the existing contact info
 
 
 // @Author Vivek
-// @version 5
+// @version 6
 
 
 package main;
@@ -15,6 +14,7 @@ import java.util.*;
 import com.login.Login;
 import com.mycontact.contacts.AddContact;
 import com.mycontact.contacts.Contacts;
+import com.mycontact.contacts.EditContacts;
 import com.mycontact.contacts.ViewContacts;
 import com.mycontact.modify.ModifyUserProfile;
 import com.sessionmanager.SessionManager;
@@ -98,7 +98,7 @@ public class Main {
 				break;
 			}
 			case 5:{
-				
+				EditContacts.editContacts(userContacts.get(user), sc);
 				break;
 			}
 			case 6:{
