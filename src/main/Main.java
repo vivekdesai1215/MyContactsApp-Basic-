@@ -1,11 +1,10 @@
 
 // Extending UC5 and implementing this
-// Added EditContacts Feature 
-// EditContacts will edit the existing contact info
+// Added Delete Contacts Feature
 
 
 // @Author Vivek
-// @version 6
+// @version 7
 
 
 package main;
@@ -14,6 +13,7 @@ import java.util.*;
 import com.login.Login;
 import com.mycontact.contacts.AddContact;
 import com.mycontact.contacts.Contacts;
+import com.mycontact.contacts.DeleteContact;
 import com.mycontact.contacts.EditContacts;
 import com.mycontact.contacts.ViewContacts;
 import com.mycontact.modify.ModifyUserProfile;
@@ -102,7 +102,7 @@ public class Main {
 				break;
 			}
 			case 6:{
-				
+				DeleteContact.deleteContacts(userContacts.get(user), sc);
 				break;
 			}
 			case 7:{
