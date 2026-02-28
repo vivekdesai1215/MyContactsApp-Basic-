@@ -19,6 +19,7 @@ import com.mycontact.contacts.EditContacts;
 import com.mycontact.contacts.Tag;
 import com.mycontact.contacts.ViewContacts;
 import com.mycontact.modify.ModifyUserProfile;
+import com.mycontact.search.SearchContactsHandler;
 import com.sessionmanager.SessionManager;
 import com.userregistration.HashPassword;
 import com.userregistration.RegisterUser;
@@ -74,7 +75,7 @@ public class Main {
 			do {
 			System.out.println("");
 			System.out.println("Please select the Opration you wanna perform : ");
-			System.out.println("1. View your Profile Info \n 2. Edit Your Profile Info \n 3. View your Contacts \n 4. Add Contacts \n 5. Edit your Contacts \n 6. Delete Contacts \n 7. End Session(Log Out)");
+			System.out.println("1. View your Profile Info \n 2. Edit Your Profile Info \n 3. View your Contacts \n 4. Add Contacts \n 5. Edit your Contacts \n 6. Delete Contacts \n 7. Search Contacts \n 8. End Session(Log Out)");
 			System.out.println("");
 			int op = sc.nextInt();
 			sc.nextLine();
@@ -108,6 +109,10 @@ public class Main {
 				break;
 			}
 			case 7:{
+				SearchContactsHandler.searchContacts(user, sc);
+				break;
+			}
+			case 8:{
 				
 				break;
 			}
