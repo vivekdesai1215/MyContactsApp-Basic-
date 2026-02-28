@@ -1,10 +1,11 @@
 
-// Extending UC5 and implementing this
-// Added Delete Contacts Feature
+// Extending UC7 and implementing this
+// Converted the Tag into an Enum field so that I can add more type of tags if I want and Can enforce the user into choosing a consistent tag
+// Which will be helpful for futher operations like filtering and all
 
 
 // @Author Vivek
-// @version 7
+// @version 8
 
 
 package main;
@@ -15,6 +16,7 @@ import com.mycontact.contacts.AddContact;
 import com.mycontact.contacts.Contacts;
 import com.mycontact.contacts.DeleteContact;
 import com.mycontact.contacts.EditContacts;
+import com.mycontact.contacts.Tag;
 import com.mycontact.contacts.ViewContacts;
 import com.mycontact.modify.ModifyUserProfile;
 import com.sessionmanager.SessionManager;
@@ -35,8 +37,8 @@ public class Main {
 		User user02 = new User(UserType.FREE, "Vivek","vivekdesai1215@gmail.com",HashPassword.hashPassword("vivek1010"), "7204760809");
 		userList.add(user01);
 		userList.add(user02);
-		Contacts contacts01 = new Contacts( "tempo", "9191919191","shreyas@gmail.com","Company");
-		Contacts contacts02 = new Contacts("tempooooo","7204760809","hey@gmail.com","Bank");
+		Contacts contacts01 = new Contacts( "tempo", "9191919191","shreyas@gmail.com",Tag.FAMILY);
+		Contacts contacts02 = new Contacts("tempooooo","7204760809","hey@gmail.com",Tag.FRIEND);
 		userContacts.put(user01, new ArrayList<>(Arrays.asList(contacts01,contacts02)));
 		
 	}

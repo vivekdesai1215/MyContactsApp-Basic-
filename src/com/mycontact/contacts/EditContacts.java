@@ -50,9 +50,13 @@ public class EditContacts {
 				break;
 			}
 			case 4:{
-				System.out.print("Enter the updated Tag : ");
+				System.out.print("Change the Tag ? ");
+				System.out.println("Choose One of these : BUSINESS | FRIEND | FAMILY ");
 				String tag = sc.nextLine();
-				contact.setTag(tag);
+				if(tag.equalsIgnoreCase("business")) contact.setTag(Tag.BUSINESS);
+				else if(tag.equalsIgnoreCase("family")) contact.setTag(Tag.FAMILY);
+				else if(tag.equalsIgnoreCase("friend")) contact.setTag(Tag.FRIEND);
+				else System.out.println("Please Enter a valid Tag ");
 				break;
 			}
 			case 5 :{

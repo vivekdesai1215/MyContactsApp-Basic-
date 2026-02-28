@@ -7,7 +7,8 @@ public class Contacts {
 	private String name;
 	String phoneNo;
 	String email;
-	String tag;
+	Tag tag;
+	
 	public String getName() {
 		return name;
 	}
@@ -27,20 +28,22 @@ public class Contacts {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTag() {
+	public Tag getTag() {
 		return tag;
 	}
-	public void setTag(String tag) {
+	
+	public void setTag(Tag tag) {
 		this.tag = tag;
 	}
 	
-	public  Contacts(String name, String phoneNo, String email, String tag) {
+	public  Contacts(String name, String phoneNo, String email, Tag tag) {
 		super();
 		this.name = name;
 		this.phoneNo = phoneNo;
 		this.email = email;
 		this.tag = tag;
 	}
+	
 	
 	
 	

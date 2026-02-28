@@ -10,7 +10,7 @@ public class ViewContacts {
 			String name = contact.getName();
 			String phoneNo = contact.getPhoneNo();
 			String email = contact.getEmail();
-			String tag = contact.getTag();
+			Tag tag = contact.getTag();
 			
 			System.out.println("");
 			System.out.println("Contact Info - "+count++);
