@@ -1,14 +1,29 @@
 package com.mycontact.contacts;
-
+import java.time.*;
 import java.util.*;
 
 public class Contacts {
 	
 	private String name;
-	String phoneNo;
-	String email;
-	Tag tag;
+	private String phoneNo;
+	private String email;
+	private Tag tag;
+	private LocalDate dateCreated;
+	private int contactFrequency;
 	
+	
+	public LocalDate getDateCreated() {
+		return dateCreated;
+	}
+
+	public int getContactFrequency() {
+		return contactFrequency;
+	}
+
+	public void setContactFrequency(int contactFrequency) {
+		this.contactFrequency = contactFrequency;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -36,12 +51,13 @@ public class Contacts {
 		this.tag = tag;
 	}
 	
-	public  Contacts(String name, String phoneNo, String email, Tag tag) {
+	public  Contacts(String name, String phoneNo, String email, Tag tag,LocalDate dateCreated) {
 		super();
 		this.name = name;
 		this.phoneNo = phoneNo;
 		this.email = email;
 		this.tag = tag;
+		this.dateCreated = dateCreated;
 	}
 	
 	

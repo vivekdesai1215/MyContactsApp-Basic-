@@ -1,11 +1,10 @@
 
-// Extending UC7 and implementing this
-// Converted the Tag into an Enum field so that I can add more type of tags if I want and Can enforce the user into choosing a consistent tag
-// Which will be helpful for futher operations like filtering and all
+// Extending UC9 and implementing this
+// Added Features to Filter the contact using different fields like - Date Added, Tag, Contact Frequency
 
 
 // @Author Vivek
-// @version 8
+// @version 10
 
 
 package main;
@@ -13,6 +12,7 @@ package main;
 import java.util.*;
 import com.login.Login;
 import com.mycontact.contacts.AddContact;
+import com.mycontact.contacts.ContactMenu;
 import com.mycontact.contacts.Contacts;
 import com.mycontact.contacts.DeleteContact;
 import com.mycontact.contacts.EditContacts;
@@ -25,6 +25,7 @@ import com.userregistration.HashPassword;
 import com.userregistration.RegisterUser;
 import com.userregistration.User;
 import com.userregistration.UserType;
+import java.time.*;
 
 
 @SuppressWarnings("unused")
@@ -38,8 +39,8 @@ public class Main {
 		User user02 = new User(UserType.FREE, "Vivek","vivekdesai1215@gmail.com",HashPassword.hashPassword("vivek1010"), "7204760809");
 		userList.add(user01);
 		userList.add(user02);
-		Contacts contacts01 = new Contacts( "tempo", "9191919191","shreyas@gmail.com",Tag.FAMILY);
-		Contacts contacts02 = new Contacts("tempooooo","7204760809","hey@gmail.com",Tag.FRIEND);
+		Contacts contacts01 = new Contacts( "tempo", "9191919191","shreyas@gmail.com",Tag.FAMILY,LocalDate.now());
+		Contacts contacts02 = new Contacts("tempooooo","7204760809","hey@gmail.com",Tag.FRIEND,LocalDate.now());
 		userContacts.put(user01, new ArrayList<>(Arrays.asList(contacts01,contacts02)));
 		
 	}
@@ -75,7 +76,7 @@ public class Main {
 			do {
 			System.out.println("");
 			System.out.println("Please select the Opration you wanna perform : ");
-			System.out.println("1. View your Profile Info \n 2. Edit Your Profile Info \n 3. View your Contacts \n 4. Add Contacts \n 5. Edit your Contacts \n 6. Delete Contacts \n 7. Search Contacts \n 8. End Session(Log Out)");
+			System.out.println(" 1. View your Profile Info \n 2. Edit Your Profile Info \n 3. Contacts Menu");
 			System.out.println("");
 			int op = sc.nextInt();
 			sc.nextLine();
@@ -93,23 +94,7 @@ public class Main {
 				break;
 			}
 			case 3:{
-				ViewContacts.viewContacts(userContacts.get(user));
-				break;
-			}
-			case 4:{
-				AddContact.addContact(user, sc);
-				break;
-			}
-			case 5:{
-				EditContacts.editContacts(userContacts.get(user), sc);
-				break;
-			}
-			case 6:{
-				DeleteContact.deleteContacts(userContacts.get(user), sc);
-				break;
-			}
-			case 7:{
-				SearchContactsHandler.searchContacts(user, sc);
+				ContactMenu.contactMenu(user, sc);
 				break;
 			}
 			case 8:{

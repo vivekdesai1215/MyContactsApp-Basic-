@@ -3,6 +3,7 @@
 
 package com.mycontact.contacts;
 import java.util.*;
+import java.time.*;
 
 import com.userregistration.User;
 
@@ -17,6 +18,7 @@ public class AddContact {
 			String email=null;
 			String tags=null;
 			Tag tag=null;
+			LocalDate dateCreated=null;
 			
 			// We can put data validation here
 			System.out.println("");
@@ -37,7 +39,7 @@ public class AddContact {
 			else if(tags.equalsIgnoreCase("friend")) tag = Tag.FRIEND;
 			else System.out.println("Please Enter a valid Tag ");
 			
-			Contacts contact = new Contacts(name,phoneNo,email, tag);
+			Contacts contact = new Contacts(name,phoneNo,email, tag, LocalDate.now());
 			
 			List list = Main.userContacts.get(user);
 			list.add(contact);
