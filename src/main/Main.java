@@ -1,10 +1,11 @@
 
-// Extending UC9 and implementing this
-// Added Features to Filter the contact using different fields like - Date Added, Tag, Contact Frequency
+// Extending UC10 and implementing this
+// I have defined a Tags Enum and included it as a field in Contacts Class
+// So I have defined 3 types of Tags - BUSINESS, FAMILY, FRIEND
 
 
 // @Author Vivek
-// @version 10
+// @version 11
 
 
 package main;
