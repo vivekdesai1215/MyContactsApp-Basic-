@@ -1,7 +1,7 @@
 
-// Extending UC10 and implementing this
-// I have defined a Tags Enum and included it as a field in Contacts Class
-// So I have defined 3 types of Tags - BUSINESS, FAMILY, FRIEND
+// Extending UC11 and implementing this
+// Added tags
+// Allowed User to add tags by giving them options,
 
 
 // @Author Vivek
